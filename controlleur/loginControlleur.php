@@ -1,5 +1,7 @@
 <?php
 
+require_once "controlleur.php";
+
 class LoginControlleur{
 
 	 public function login(array $user): ?string{ // typage donné en sorti (Null ou string);
@@ -18,15 +20,11 @@ class LoginControlleur{
 
 		if($email == "toto@toto.toto" && $password = "toto"){ // connection
 			$_SESSION["user"] = $user;
-			return "view/no-connect/login.php";
+			return "view/no-connect/index.php";
 		}else
 		return "view/no-connect/login.php";
 
 	}
 
-	public function validateEmail(string $email): bool{
-		return (filter_var($email, FILTER_VALIDATE_EMAIL)) ? true : false;
-
-
-	}
+	
 }
